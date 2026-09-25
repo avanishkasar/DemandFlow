@@ -10,3 +10,5 @@ node_modules/
 .next/
 frontend-react/node_modules/
 frontend-react/.next/
+frontend-react/out/
+KAN-KubeAgent/

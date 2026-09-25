@@ -1,0 +1,76 @@
+# Method Validation
+
+Results and Discussion are not part of a traditional methods article. However, we provide data here to validate the performance and accuracy of the proposed forecasting pipeline.
+
+## 1. Overall Model Performance
+All three models were assessed based on four regression evaluation measures on a 52-week test set (January–December 2024): Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), and the coefficient of determination ($R^2$).
+
+---
+**[INSERT Table 2: Model performance comparison on 52-week test set (January-December 2024). Lower RMSE, MAE, and MAPE indicate better accuracy. Higher R-squared indicates better explained variance.]**
+---
+
+---
+**[INSERT Figure 9A: Bar chart comparing RMSE across all three models.]**
+**[INSERT Figure 9B: Bar chart comparing MAE across all three models.]**
+**[INSERT Figure 9C: Bar chart comparing MAPE across all three models.]**
+---
+
+### SARIMA vs. XGBoost Analysis
+The difference in predictive performance between the classical univariate SARIMA approach as the baseline and the two versions of the multivariate XGBoost algorithm is significant. While SARIMA demonstrated an RMSE of 229.44 units and a MAPE of 9.69%, XGBoost managed to reduce these metrics to the values of 31.08 for RMSE and 1.25% for MAPE. This represents an improvement of around 86.5% for RMSE and 87.1% for MAPE.
+
+The explanation for such a result lies in the structural features of the models. SARIMA is a univariate approach able to pick up predictive information from the structure of autoregression of the sales time series only. Thus, it fails to include the effects of price changes, product category type, seasonality, and consumer searches from Google Trends. In turn, XGBoost can take all of them into account. 
+
+Moreover, due to the seasonal period of $s=52$ weeks and the high order of the SARIMA $(1,1,1)(1,1,1)_{52}$ approach, many parameters must be estimated based on the 101-week historical data available. At the same time, XGBoost's built-in regularization properties make it more suitable for use in such conditions. This finding aligns with the broader evidence compiled by Makridakis et al. [10], who showed that machine learning methods excel when rich feature sets are available.
+
+---
+**[INSERT Figure 10: SARIMA forecast vs. actual weekly sales for HDMI Cables category during the 52-week test period (2024). The shaded region represents an approximate 15% confidence interval around the SARIMA forecast.]**
+---
+**[INSERT Figure 11: Three-model comparison on the test set for a single product category, showing Actual (black), SARIMA (red dashed), XGBoost without Trends (orange dashed), and XGBoost + Trends (green dashed).]**
+---
+
+### Impact of Google Trends Features
+Direct comparison between the two XGBoost models showed that introducing Google Trends features resulted in a 2.5% relative improvement in the MAPE metric (from 1.25% to 1.22%), while RMSE rose slightly from 31.08 to 31.64 units, corresponding to -1.8%. There is a minor difference in R-squared values (0.9979 versus 0.9978) for Models A and B, respectively, meaning that both models explained more than 99.7% of the weekly unit sales variance.
+
+The modest difference can be attributed to results reported in previous studies. As discussed by Boone et al. [2], incorporating internet searches leads to the greatest improvements only when there is a structural shift in demand rather than steady-state forecasting. In this case, the existing steady-state pattern was effectively captured by the base set of features, and Google Trends provided the strongest signal during the September-October transition period.
+
+The feature importance ranking of Model B sheds further light on this. According to the ranking, the lagged versions of the Google Trends variable turned out to be some of the most important predictors used in the model. Moreover, momentum and velocity metrics were assigned relatively high importance scores.
+
+---
+**[INSERT Figure 12: XGBoost feature importance chart for Model B (with Google Trends). Green bars represent Google Trends-derived features; blue bars represent baseline features.]**
+---
+
+## 2. Seasonal Demand Structure Validation
+Analysis of the time series data on weekly Google Trends over 157 weeks for the key phrase 'earbuds india' showed the presence of a clearly identifiable and repeatable seasonality of consumer search demand with a period of one year. There is an evident drop in search interest during the summer period (June–August, index scores between 0-20). Then there is an abrupt growth in interest starting from late September up to October-November, associated with the Diwali holidays and Amazon Great Indian Festival (index values 80-100). In addition, there is a secondary peak in January-February associated with Republic Day holidays. For the phrase 'smart watches', similar seasonal patterns are observed, with maxima at the levels of 97 in November 2025 and 100 in January 2026.
+
+---
+**[INSERT Figure 13: Monthly aggregated average sales vs. Google Trends index (dual-axis chart). Blue bars show average units sold per month; the red line shows average Google Trends index. Note that Trends peaks in October precede the sales peak, confirming the leading-indicator effect.]**
+---
+
+## 3. Price Sensitivity Analysis Validation
+Through correlation analysis, an association between average price per unit and unit sales was tested for various values of the festive season binary indicator (`Is_Festive_Season`). The results show that the negative relationship is weaker when a festive season prevails. In other words, Indian customers shopping online become less price-sensitive during festive seasons such as Diwali. This may be due to a sense of urgency, concentration of discounts, and aspirational buying behaviour. Therefore, sellers should consider adopting a higher initial price point. This behaviour is consistent with dynamic pricing theory [15], which suggests that demand elasticity varies with contextual factors such as promotional events and seasonal urgency.
+
+---
+**[INSERT Figure 14: Scatter plot of Price (INR) vs. Units Sold by product category, with festive season and non-festive season data points differentiated by colour. Source: Notebook 06, Section 6.4.]**
+---
+
+## 4. Launch Timing Results Validation
+The best launch window calculation tool always produced weeks 42 to 46 (mid-to-late October to mid-November) as the most suitable launch window regardless of the electronics category, based on the results of the test data analysis as well as future projections. The suggested preparation period is weeks 39 to 41 (September-end/October-beginning) when the Google Trends index shifts from being at its annual low point in summertime to approaching festive season peak values.
+
+From the practical point of view, this result means that retailers launching listings, SEO optimisation, and advertising campaigns in weeks 39 to 41 will take advantage of increasing traffic and positive effects from listing algorithms, and by the time the demand peak occurs in weeks 42 to 46, they are ready to receive and fulfil the incoming demand.
+
+---
+**[INSERT Figure 15: Demand forecast chart showing historical sales (blue solid line), XGBoost + Trends forecast (green dashed), and ARIMA forecast (red dotted) for the 8-week forward projection period. The gold star marks the recommended best launch week.]**
+---
+
+---
+**[INSERT Figure 16: Summary dashboard view from the deployed web application, showing the four key recommendation metrics: Best Launch Week, Optimal Price, Expected Units, and Expected Revenue.]**
+---
+
+## 5. Comparison with Existing Systems
+Table 3 presents a systematic comparison of the system proposed in this study against previous systems in demand forecasting using web search information across twelve evaluation dimensions.
+
+---
+**[INSERT Table 3: Structured comparison of the proposed system with existing approaches across twelve evaluation dimensions.]**
+---
+
+It needs to be noted that the MAPE comparison across the studies presented here needs to be taken cautiously since each of these studies uses different datasets and time horizons. In addition, while the 1.22% MAPE is reported for a synthetic dataset in this study, the 8-15% MAPE is achieved using actual retail datasets in the Boone et al. study.

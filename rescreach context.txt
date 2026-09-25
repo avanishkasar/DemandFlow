@@ -1,0 +1,59 @@
+# Instructions
+- [unknown] - Keep your responses concise.
+- [unknown] - Format your responses in github-style markdown.
+- [unknown] - You MUST create clickable links for all files and code symbols (classes, types, functions, structs). Use github style markdown links with the file:// scheme. For Windows, use forward slashes for paths.
+- [unknown] - If you're unsure about the user's intent, ask for clarification rather than making assumptions.
+- [2026-08-17] - "cybersecuritiy is not our cup of tea" — do not propose cybersecurity, network defense, or vulnerability patching topics.
+- [2026-08-17] - Do not mention abroad studies or study abroad POV in responses, even if using it internally to guide relevance.
+- [2026-08-17] - Always explicitly specify how many agents are working and detail whether and how each agent interacts with the KAN network for decision making.
+- [2026-08-17] - Keep descriptions short and crisp so that key options can easily fit onto a single screen for screenshots.
+- [2026-09-18] - Present paper options and application ideas in a structured, crisp table format (Title, Description, Conditions/Information Table, Final Showcase/Product mockup) instead of long walls of text.
+
+# Identity
+- [unknown] - Name: Avanish Kasar.
+- [unknown] - Location / Affiliation: Department of Computer Engineering, A.P. Shah Institute of Technology, Thane (W)-400615, India.
+- [unknown] - Email: avanishkasar57@gmail.com.
+- [unknown] - Education / Certifications: Completed Linux Foundation LFS158 (Introduction to Kubernetes) and LFS147 (Introduction to AI/ML Toolkits with Kubeflow).
+
+# Career
+- [unknown] - Roles: Student researcher, AI/ML engineer, open-source builder.
+- [unknown] - Domains / Skills: Python, Machine Learning, Deep Learning (KAN / Kolmogorov-Arnold Networks, Time Series, XGBoost, SARIMA), Kubernetes (K8s orchestration, pods, microservices), Kubeflow (TrainJob, MLOps), Agentic AI systems (multi-agent loops, LangGraph, tool use), Git/GitHub CI/CD and release pipelines.
+
+# Projects
+- [2026-02-21] - DemandFlow: An e-commerce search-aware demand forecasting platform using SARIMA, XGBoost, and Google Trends integration; originated as a research paper ("Artificial Intelligence for Search-Aware E-Commerce Demand Forecasting" in MethodsX), publicly released at v1.0.1 on GitHub (avanishkasar/DemandFlow) and permanently archived on Zenodo under DOI 10.5281/zenodo.22012115.
+- [2026-07-24] - Avishkar Research Project: Strategy formulated to evolve DemandFlow into an applied SaaS/ML product for the Avishkar Research Convention (Categories: Engineering & Technology / Commerce & Management).
+- [2026-08-17] - KAN-KubeAgent: Active research project and GitHub repository (avanishkasar/KAN-KubeAgent) combining Kolmogorov-Arnold Networks (KAN), Kubernetes, and Agentic AI into an interpretable trust/decision-scoring layer for autonomous cloud/cluster operations.
+
+# Preferences
+- [2026-07-18] - Strong preference for research involving Kolmogorov-Arnold Networks (KAN) due to explicit faculty/mentor recommendation.
+- [2026-08-17] - Prefers research topics combining all three core pillars: KAN + Kubernetes + Agentic AI.
+- [2026-08-17] - Explicitly dislikes cybersecurity, vulnerability mitigation, and network exploit domains.
+- [2026-08-17] - Strongly favors domains where practical scenarios, simulated testbeds, and original publishable results can be created independently without relying on scarce external proprietary datasets.
+- [2026-08-17] - Favors MLOps, LLMOps, model serving, and resource orchestration workloads over generic Kubernetes administration.
+- [2026-08-17] - Prefers a multi-agent setup (typically 3 to 4 specialized agents coordinated by a supervisor) where the KAN acts as the mathematical gating/scoring layer outputting an interpretable symbolic equation.
+- [2026-08-17] - Insists that any chosen paper topic must strongly justify "Why Kubernetes?" (e.g., native pod scaling, traffic splitting, ingress routing, GPU resource quota management) so the infrastructure choice cannot be challenged by reviewers.
+- [2026-08-17] - Preferred shortlisted directions: (1) KAN-gated joint LLM request routing and GPU resource orchestration, and (2) KAN-gated autonomous AI model canary rollout/promotion.
+- [2026-09-18] - Wants diverse, non-GPU-exclusive perspectives (e.g., CI/CD gating, multi-tenant SaaS fairness, e-commerce personalization microservices, RAG quality verification, research monitoring) to keep project scope practical, buildable, and aligned with team capabilities.
+
+# Research Vision, Ambitions & Target Preferences
+
+- **Target Research Formula**: Projects must integrate the three-way synergy of **KAN (Kolmogorov-Arnold Networks) + Kubernetes (K8s) + Agentic AI (Multi-Agent Systems)**.
+- **Specific Role of KAN**: 
+  - Never use KAN as a blind predictor; it must act as a **mathematical trust verification and gating layer**.
+  - Must output a concrete, human-interpretable **symbolic formula** (via spline activation analysis) that explicitly justifies *why* an action was approved, throttled, or rejected to cluster operators.
+- **Agent Architecture Rules**:
+  - Prefer a lean multi-agent setup (typically **3 to 4 specialized agents** coordinated by a Supervisor agent).
+  - Every consequential or state-changing action proposed by any agent must pass through the KAN gating layer prior to execution.
+- **Strict Infrastructure Justification ("Why Kubernetes?")**:
+  - The application problem must genuinely depend on native Kubernetes primitives (e.g., dynamic pod autoscaling, traffic-split ingress/Istio routing, namespace resource quotas, GPU node-slicing/MIG, or Kueue gang scheduling).
+  - Reviewers should never be able to ask: *"Why could this not be done on a simple standalone server or VM?"*
+- **Domain Dislikes & Boundary Conditions**:
+  - **No Cybersecurity / Exploit Defense / Vulnerability Patching**: Explicitly avoided ("not our cup of tea").
+  - **Avoid Generic Forecasting / Standalone Time-Series**: Unless tied to real-time operational actuation and cluster orchestration.
+  - **No GPU-Hardcoded Dependencies (Keep Options Open)**: While GPU orchestration is acceptable, the team also values lightweight, easily testable scenarios (e.g., CI/CD gating, multi-tenant SaaS quota fairness, RAG proxy quality verification, e-commerce microservices).
+- **Execution & Feasibility Standards**:
+  - **Self-Contained & Simulatible**: Must be fully testable on simulated metrics or local clusters (e.g., Minikube, Kind, or synthetic workload generators) without requiring massive multi-GPU cloud spend or private proprietary datasets.
+  - **High Demo Value**: The finished prototype should produce an interactive, tangible showcase (e.g., live traffic re-routing dashboard, side-by-side comparison tables, audit log showing KAN equations in real time).
+- **Presentation & Output Style**:
+  - Format proposals in clean, modular blocks or comparison tables (Title, 1-Sentence Problem, Architecture & Agent Count, KAN Role & Mathematical Features, Showcase/Demo Mockup).
+  - Keep descriptions concise and screenshot-friendly (fitting key options into single screens).
