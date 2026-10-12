@@ -965,18 +965,23 @@ def run():
 
     # ── Weekly pattern ────────────────────────────────────────────────────
     # Deterministic hash so all repos agree on zero days
+    # Target: 3-4 active days with 30-40 total contributions (15-20 per repo)
+    #         3-4 rest days with 0 contributions
     day_hash = int(hashlib.md5(date_str.encode()).hexdigest()[:8], 16)
     slot = day_hash % 7
 
     if slot < 3:
-        # 3 out of 7 days: zero commits
-        num_commits = 0
-    elif slot < 5:
-        # 2 out of 7 days: light work (1-10 per repo → 2-20 total)
-        num_commits = random.randint(1, 10)
+        # 3 out of 7 days: active (15-20 per repo → 30-40 total)
+        num_commits = random.randint(15, 20)
+    elif slot == 3:
+        # 1 out of 7 days: could be active or rest (coin flip based on date)
+        if (day_hash >> 4) % 2 == 0:
+            num_commits = random.randint(15, 20)
+        else:
+            num_commits = 0
     else:
-        # 2 out of 7 days: heavy work (13-17 per repo → 26-34 total)
-        num_commits = random.randint(13, 17)
+        # 3 out of 7 days: rest
+        num_commits = 0
 
     log(f"Slot {slot}/7 | Commits planned: {num_commits}")
 
