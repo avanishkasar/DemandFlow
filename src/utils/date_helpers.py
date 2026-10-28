@@ -1,3 +1,4 @@
+# Updated: 2026-10-28T10:43:40
 """Date manipulation helpers for forecast windows."""
 from datetime import datetime, timedelta
 
