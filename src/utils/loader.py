@@ -1,4 +1,3 @@
-# Updated: 2026-10-30T10:58:03
 """Data loading utilities."""
 import pandas as pd
 from pathlib import Path
