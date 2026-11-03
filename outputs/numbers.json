@@ -1,0 +1,1356 @@
+{
+ "nprod": {
+  "USBCables": 233,
+  "HDMICables": 24,
+  "WirelessUSBAdapters": 18
+ },
+ "price": {
+  "USBCables": "361",
+  "HDMICables": "406",
+  "WirelessUSBAdapters": "722"
+ },
+ "gt": {
+  "e": {
+   "start": "26 Feb 2023",
+   "end": "22 Feb 2026",
+   "n": 157,
+   "mean": "49.5",
+   "sd": "28.5",
+   "peaks": "28 Jan 2024; 26 Jan 2025; 02 Nov 2025"
+  },
+  "s": {
+   "start": "26 Mar 2023",
+   "end": "15 Mar 2026",
+   "n": 156,
+   "mean": "42.2",
+   "sd": "28.9",
+   "peaks": "28 Jan 2024; 17 Nov 2024; 04 Jan 2026"
+  }
+ },
+ "cal": {
+  "diwali": "12 November 2023, 1 November 2024 and 20 October 2025",
+  "prime": "15 July 2023, 20 July 2024 and 12 July 2025"
+ },
+ "sim": {
+  "start": "12 March 2023",
+  "end": "22 February 2026",
+  "weeks": 155,
+  "rows": 465
+ },
+ "data": {
+  "weeks": 151,
+  "rows": 453,
+  "first": "09 April 2023",
+  "last": "22 February 2026",
+  "test_first": "02 March 2025",
+  "train_weeks": 99,
+  "train_rows": 297
+ },
+ "sarima": {
+  "ncand": 32,
+  "selmape": "11.5",
+  "origmape": "13.6"
+ },
+ "ridge": {
+  "A": 10,
+  "B": 10
+ },
+ "xgb": {
+  "A": "300 trees, max_depth 6, learning_rate 0.05, min_child_weight 5",
+  "B": "300 trees, max_depth 3, learning_rate 0.05, min_child_weight 5"
+ },
+ "env": {
+  "python": "3.13.18",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "sklearn": "1.9.1",
+  "statsmodels": "0.15.0",
+  "xgboost": "3.4.1"
+ },
+ "leak": [
+  {
+   "Setting": "As submitted (MA include current week; price derived from target)",
+   "A_RMSE": 30.486969712741622,
+   "A_MAE": 12.228473663330078,
+   "A_MAPE": 1.0087532122455067,
+   "A_R2": 0.9979891180992126,
+   "B_RMSE": 30.94705108250421,
+   "B_MAE": 12.300336837768556,
+   "B_MAPE": 1.0397067757506184,
+   "B_R2": 0.9979279637336732
+  },
+  {
+   "Setting": "Moving averages use past weeks only",
+   "A_RMSE": 30.072433511843013,
+   "A_MAE": 11.91232681274414,
+   "A_MAPE": 0.972575385663178,
+   "A_R2": 0.998043417930603,
+   "B_RMSE": 30.9821578332418,
+   "B_MAE": 11.906166076660156,
+   "B_MAPE": 0.9374859266627148,
+   "B_R2": 0.9979232549667358
+  },
+  {
+   "Setting": "Price features removed",
+   "A_RMSE": 124.31100347892578,
+   "A_MAE": 88.12033081054688,
+   "A_MAPE": 7.913905783811,
+   "A_R2": 0.966566801071167,
+   "B_RMSE": 122.58314302188944,
+   "B_MAE": 89.1474380493164,
+   "B_MAPE": 8.106764054024197,
+   "B_R2": 0.967489778995514
+  },
+  {
+   "Setting": "Both corrections",
+   "A_RMSE": 207.93336710650843,
+   "A_MAE": 143.05445861816406,
+   "A_MAPE": 11.864519608755966,
+   "A_R2": 0.9064579606056212,
+   "B_RMSE": 207.6226670549244,
+   "B_MAE": 141.3123779296875,
+   "B_MAPE": 12.421755003180031,
+   "B_R2": 0.9067373275756836
+  }
+ ],
+ "orig_counts": {
+  "synthetic_rows": 471.0,
+  "weeks_per_category": 157.0,
+  "rows_after_lag_dropna": 459.0,
+  "weeks_after_lag_dropna": 153.0,
+  "train_rows": 303.0,
+  "test_rows": 156.0,
+  "corr_between_categories_min": 0.999988431489744,
+  "corr_PriceElasticity_UnitsSold": -1.0,
+  "corr_WeeklyPrice_UnitsSold_within_category_min": 0.999997733637446
+ },
+ "main": {
+  "Naive": {
+   "rmse": "273",
+   "rmse_ci": "194\u2013356",
+   "mae": "173",
+   "mae_ci": "125\u2013233",
+   "mape": "13.8",
+   "mape_ci": "11.7\u201316.9",
+   "r2": "0.89",
+   "r2_ci": "0.84\u20130.92",
+   "r2_cat": {
+    "HDMICables": "0.58",
+    "USBCables": "0.67",
+    "WirelessUSBAdapters": "0.58"
+   },
+   "mape_cat": {
+    "HDMICables": "14.1",
+    "USBCables": "13.0",
+    "WirelessUSBAdapters": "14.4"
+   }
+  },
+  "SeasonalNaive": {
+   "rmse": "254",
+   "rmse_ci": "186\u2013315",
+   "mae": "166",
+   "mae_ci": "125\u2013213",
+   "mape": "13.3",
+   "mape_ci": "11.0\u201316.0",
+   "r2": "0.90",
+   "r2_ci": "0.87\u20130.94",
+   "r2_cat": {
+    "HDMICables": "0.65",
+    "USBCables": "0.64",
+    "WirelessUSBAdapters": "0.61"
+   },
+   "mape_cat": {
+    "HDMICables": "13.1",
+    "USBCables": "12.6",
+    "WirelessUSBAdapters": "14.1"
+   }
+  },
+  "SARIMA_orig": {
+   "rmse": "242",
+   "rmse_ci": "172\u2013318",
+   "mae": "156",
+   "mae_ci": "117\u2013204",
+   "mape": "13.8",
+   "mape_ci": "11.1\u201317.3",
+   "r2": "0.91",
+   "r2_ci": "0.87\u20130.95",
+   "r2_cat": {
+    "HDMICables": "0.71",
+    "USBCables": "0.64",
+    "WirelessUSBAdapters": "0.56"
+   },
+   "mape_cat": {
+    "HDMICables": "11.3",
+    "USBCables": "13.8",
+    "WirelessUSBAdapters": "16.1"
+   }
+  },
+  "SARIMA_sel": {
+   "rmse": "226",
+   "rmse_ci": "165\u2013284",
+   "mae": "149",
+   "mae_ci": "114\u2013193",
+   "mape": "12.4",
+   "mape_ci": "10.4\u201315.2",
+   "r2": "0.92",
+   "r2_ci": "0.89\u20130.95",
+   "r2_cat": {
+    "HDMICables": "0.73",
+    "USBCables": "0.70",
+    "WirelessUSBAdapters": "0.68"
+   },
+   "mape_cat": {
+    "HDMICables": "11.9",
+    "USBCables": "12.0",
+    "WirelessUSBAdapters": "13.3"
+   }
+  },
+  "SARIMAX": {
+   "rmse": "188",
+   "rmse_ci": "139\u2013241",
+   "mae": "127",
+   "mae_ci": "102\u2013160",
+   "mape": "10.7",
+   "mape_ci": "9.4\u201312.3",
+   "r2": "0.95",
+   "r2_ci": "0.93\u20130.96",
+   "r2_cat": {
+    "HDMICables": "0.80",
+    "USBCables": "0.76",
+    "WirelessUSBAdapters": "0.82"
+   },
+   "mape_cat": {
+    "HDMICables": "10.5",
+    "USBCables": "10.6",
+    "WirelessUSBAdapters": "11.0"
+   }
+  },
+  "Ridge_B": {
+   "rmse": "163",
+   "rmse_ci": "121\u2013199",
+   "mae": "110",
+   "mae_ci": "85\u2013134",
+   "mape": "9.8",
+   "mape_ci": "8.6\u201311.0",
+   "r2": "0.96",
+   "r2_ci": "0.95\u20130.97",
+   "r2_cat": {
+    "HDMICables": "0.87",
+    "USBCables": "0.86",
+    "WirelessUSBAdapters": "0.80"
+   },
+   "mape_cat": {
+    "HDMICables": "8.2",
+    "USBCables": "9.5",
+    "WirelessUSBAdapters": "11.5"
+   }
+  },
+  "XGB_A": {
+   "rmse": "220",
+   "rmse_ci": "141\u2013285",
+   "mae": "141",
+   "mae_ci": "97\u2013187",
+   "mape": "11.5",
+   "mape_ci": "9.8\u201313.4",
+   "r2": "0.93",
+   "r2_ci": "0.89\u20130.96",
+   "r2_cat": {
+    "HDMICables": "0.72",
+    "USBCables": "0.78",
+    "WirelessUSBAdapters": "0.77"
+   },
+   "mape_cat": {
+    "HDMICables": "11.0",
+    "USBCables": "10.7",
+    "WirelessUSBAdapters": "12.7"
+   }
+  },
+  "XGB_B": {
+   "rmse": "183",
+   "rmse_ci": "125\u2013228",
+   "mae": "117",
+   "mae_ci": "88\u2013145",
+   "mape": "10.1",
+   "mape_ci": "8.9\u201311.2",
+   "r2": "0.95",
+   "r2_ci": "0.93\u20130.97",
+   "r2_cat": {
+    "HDMICables": "0.82",
+    "USBCables": "0.86",
+    "WirelessUSBAdapters": "0.79"
+   },
+   "mape_cat": {
+    "HDMICables": "9.0",
+    "USBCables": "9.7",
+    "WirelessUSBAdapters": "11.6"
+   }
+  },
+  "XGB_B_lagsonly": {
+   "rmse": "186",
+   "rmse_ci": "127\u2013236",
+   "mae": "120",
+   "mae_ci": "90\u2013149",
+   "mape": "10.1",
+   "mape_ci": "8.8\u201311.4",
+   "r2": "0.95",
+   "r2_ci": "0.93\u20130.97",
+   "r2_cat": {
+    "HDMICables": "0.81",
+    "USBCables": "0.86",
+    "WirelessUSBAdapters": "0.81"
+   },
+   "mape_cat": {
+    "HDMICables": "9.4",
+    "USBCables": "9.1",
+    "WirelessUSBAdapters": "11.8"
+   }
+  },
+  "XGB_B_now": {
+   "rmse": "181",
+   "rmse_ci": "129\u2013222",
+   "mae": "117",
+   "mae_ci": "88\u2013143",
+   "mape": "10.0",
+   "mape_ci": "8.8\u201311.1",
+   "r2": "0.95",
+   "r2_ci": "0.94\u20130.97",
+   "r2_cat": {
+    "HDMICables": "0.82",
+    "USBCables": "0.85",
+    "WirelessUSBAdapters": "0.80"
+   },
+   "mape_cat": {
+    "HDMICables": "9.0",
+    "USBCables": "9.5",
+    "WirelessUSBAdapters": "11.3"
+   }
+  },
+  "XGB_B_placeboGT": {
+   "rmse": "197",
+   "rmse_ci": "130\u2013249",
+   "mae": "123",
+   "mae_ci": "87\u2013158",
+   "mape": "10.1",
+   "mape_ci": "8.6\u201311.8",
+   "r2": "0.94",
+   "r2_ci": "0.92\u20130.97",
+   "r2_cat": {
+    "HDMICables": "0.77",
+    "USBCables": "0.82",
+    "WirelessUSBAdapters": "0.82"
+   },
+   "mape_cat": {
+    "HDMICables": "9.9",
+    "USBCables": "9.5",
+    "WirelessUSBAdapters": "10.9"
+   }
+  },
+  "Ridge_A": {
+   "rmse": "188",
+   "rmse_ci": "133\u2013236",
+   "mae": "122",
+   "mae_ci": "94\u2013148",
+   "mape": "10.4",
+   "mape_ci": "9.3\u201311.7",
+   "r2": "0.95",
+   "r2_ci": "0.93\u20130.97",
+   "r2_cat": {
+    "HDMICables": "0.79",
+    "USBCables": "0.84",
+    "WirelessUSBAdapters": "0.83"
+   },
+   "mape_cat": {
+    "HDMICables": "10.0",
+    "USBCables": "10.0",
+    "WirelessUSBAdapters": "11.3"
+   }
+  },
+  "Ridge_B_placeboGT": {
+   "rmse": "183",
+   "rmse_ci": "128\u2013232",
+   "mae": "119",
+   "mae_ci": "91\u2013149",
+   "mape": "10.0",
+   "mape_ci": "8.9\u201311.1",
+   "r2": "0.95",
+   "r2_ci": "0.93\u20130.97",
+   "r2_cat": {
+    "HDMICables": "0.81",
+    "USBCables": "0.85",
+    "WirelessUSBAdapters": "0.82"
+   },
+   "mape_cat": {
+    "HDMICables": "9.5",
+    "USBCables": "8.9",
+    "WirelessUSBAdapters": "11.5"
+   }
+  },
+  "XGB_B_noDemandLags": {
+   "rmse": "201",
+   "rmse_ci": "135\u2013254",
+   "mae": "125",
+   "mae_ci": "94\u2013158",
+   "mape": "10.1",
+   "mape_ci": "8.9\u201311.5",
+   "r2": "0.94",
+   "r2_ci": "0.92\u20130.97",
+   "r2_cat": {
+    "HDMICables": "0.78",
+    "USBCables": "0.87",
+    "WirelessUSBAdapters": "0.77"
+   },
+   "mape_cat": {
+    "HDMICables": "10.4",
+    "USBCables": "9.0",
+    "WirelessUSBAdapters": "11.0"
+   }
+  },
+  "XGB_A_raw": {
+   "rmse": "235",
+   "rmse_ci": "159\u2013290",
+   "mae": "155",
+   "mae_ci": "110\u2013198",
+   "mape": "12.0",
+   "mape_ci": "10.1\u201313.7",
+   "r2": "0.92",
+   "r2_ci": "0.89\u20130.95",
+   "r2_cat": {
+    "HDMICables": "0.68",
+    "USBCables": "0.77",
+    "WirelessUSBAdapters": "0.72"
+   },
+   "mape_cat": {
+    "HDMICables": "12.1",
+    "USBCables": "11.1",
+    "WirelessUSBAdapters": "12.6"
+   }
+  },
+  "XGB_B_raw": {
+   "rmse": "205",
+   "rmse_ci": "146\u2013245",
+   "mae": "133",
+   "mae_ci": "97\u2013168",
+   "mape": "10.8",
+   "mape_ci": "9.0\u201312.5",
+   "r2": "0.94",
+   "r2_ci": "0.93\u20130.96",
+   "r2_cat": {
+    "HDMICables": "0.76",
+    "USBCables": "0.71",
+    "WirelessUSBAdapters": "0.79"
+   },
+   "mape_cat": {
+    "HDMICables": "10.5",
+    "USBCables": "11.9",
+    "WirelessUSBAdapters": "9.8"
+   }
+  },
+  "XGB_B_orig": {
+   "rmse": "189",
+   "rmse_ci": "132\u2013238",
+   "mae": "120",
+   "mae_ci": "92\u2013149",
+   "mape": "10.3",
+   "mape_ci": "9.2\u201311.4",
+   "r2": "0.95",
+   "r2_ci": "0.93\u20130.97",
+   "r2_cat": {
+    "HDMICables": "0.81",
+    "USBCables": "0.86",
+    "WirelessUSBAdapters": "0.76"
+   },
+   "mape_cat": {
+    "HDMICables": "9.0",
+    "USBCables": "9.5",
+    "WirelessUSBAdapters": "12.4"
+   }
+  }
+ },
+ "dm": {
+  "XGB_B|XGB_A|ape": {
+   "stat": "-2.84",
+   "p": "0.006"
+  },
+  "XGB_B|XGB_A|se": {
+   "stat": "-2.02",
+   "p": "0.049"
+  },
+  "XGB_B|SARIMA_sel|ape": {
+   "stat": "-2.17",
+   "p": "0.035"
+  },
+  "XGB_B|SARIMA_sel|se": {
+   "stat": "-2.13",
+   "p": "0.038"
+  },
+  "XGB_B|SARIMAX|ape": {
+   "stat": "-0.76",
+   "p": "0.448"
+  },
+  "XGB_B|SARIMAX|se": {
+   "stat": "-0.83",
+   "p": "0.412"
+  },
+  "XGB_B|SeasonalNaive|ape": {
+   "stat": "-2.85",
+   "p": "0.006"
+  },
+  "XGB_B|SeasonalNaive|se": {
+   "stat": "-2.80",
+   "p": "0.007"
+  },
+  "XGB_B|Ridge_B|ape": {
+   "stat": "0.79",
+   "p": "0.435"
+  },
+  "XGB_B|Ridge_B|se": {
+   "stat": "1.25",
+   "p": "0.217"
+  },
+  "Ridge_B|Ridge_A|ape": {
+   "stat": "-1.58",
+   "p": "0.121"
+  },
+  "Ridge_B|Ridge_A|se": {
+   "stat": "-1.16",
+   "p": "0.253"
+  },
+  "Ridge_B|SARIMAX|ape": {
+   "stat": "-1.18",
+   "p": "0.245"
+  },
+  "Ridge_B|SARIMAX|se": {
+   "stat": "-1.42",
+   "p": "0.162"
+  },
+  "Ridge_B|Ridge_B_placeboGT|ape": {
+   "stat": "-0.55",
+   "p": "0.583"
+  },
+  "Ridge_B|Ridge_B_placeboGT|se": {
+   "stat": "-0.64",
+   "p": "0.524"
+  },
+  "Ridge_B|SeasonalNaive|ape": {
+   "stat": "-3.06",
+   "p": "0.004"
+  },
+  "Ridge_B|SeasonalNaive|se": {
+   "stat": "-3.02",
+   "p": "0.004"
+  },
+  "XGB_A|SARIMA_sel|ape": {
+   "stat": "-0.78",
+   "p": "0.441"
+  },
+  "XGB_A|SARIMA_sel|se": {
+   "stat": "-0.98",
+   "p": "0.330"
+  },
+  "SARIMAX|SARIMA_sel|ape": {
+   "stat": "-2.25",
+   "p": "0.029"
+  },
+  "SARIMAX|SARIMA_sel|se": {
+   "stat": "-2.09",
+   "p": "0.042"
+  },
+  "XGB_B|XGB_B_placeboGT|ape": {
+   "stat": "-0.09",
+   "p": "0.925"
+  },
+  "XGB_B|XGB_B_placeboGT|se": {
+   "stat": "-0.61",
+   "p": "0.541"
+  },
+  "XGB_B_placeboGT|XGB_A|ape": {
+   "stat": "-4.28",
+   "p": "0.000"
+  },
+  "XGB_B_placeboGT|XGB_A|se": {
+   "stat": "-3.13",
+   "p": "0.003"
+  },
+  "XGB_B|Naive|ape": {
+   "stat": "-3.39",
+   "p": "0.001"
+  },
+  "XGB_B|Naive|se": {
+   "stat": "-3.01",
+   "p": "0.004"
+  },
+  "XGB_B|SARIMA_orig|ape": {
+   "stat": "-3.05",
+   "p": "0.004"
+  },
+  "XGB_B|SARIMA_orig|se": {
+   "stat": "-2.85",
+   "p": "0.006"
+  }
+ },
+ "imp": {
+  "gt_share": "16",
+  "top": [
+   [
+    "Festive_Sale",
+    "47"
+   ],
+   [
+    "RepublicDay_Sale",
+    "7"
+   ],
+   [
+    "sin1",
+    "6"
+   ],
+   [
+    "PrimeDay_Sale",
+    "6"
+   ],
+   [
+    "GT_momentum",
+    "5"
+   ]
+  ]
+ },
+ "beta": [
+  {
+   "beta": 0.0,
+   "n": 20,
+   "SeasonalNaive": 14.262640873678274,
+   "SARIMA_sel": 11.937366521995308,
+   "SARIMAX": 11.03105603988467,
+   "Ridge_A": 10.289881011596439,
+   "Ridge_B": 10.475214510596206,
+   "XGB_A": 9.994118383787223,
+   "XGB_B": 10.556277123892233,
+   "XGB_B_placeboGT": 10.323260362137379,
+   "Ridge_B_placeboGT": 9.909759653781773,
+   "d_XGB_B_XGB_A": 0.5621587401050088,
+   "ci_XGB_B_XGB_A": 0.20067505904455143,
+   "wil_XGB_B_XGB_A": 1.33514404296875e-05,
+   "better_XGB_B_XGB_A": 0,
+   "worse_XGB_B_XGB_A": 5,
+   "d_Ridge_B_Ridge_A": 0.18533349899976628,
+   "ci_Ridge_B_Ridge_A": 0.12115338943613173,
+   "wil_Ridge_B_Ridge_A": 0.0072956085205078125,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": 0.23301676175485486,
+   "ci_XGB_B_XGB_B_placeboGT": 0.11497933914305303,
+   "wil_XGB_B_XGB_B_placeboGT": 0.000850677490234375,
+   "better_XGB_B_XGB_B_placeboGT": 0,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": 0.5654548568144316,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.10306516658640831,
+   "wil_Ridge_B_Ridge_B_placeboGT": 1.9073486328125e-06,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 10
+  },
+  {
+   "beta": 0.1,
+   "n": 20,
+   "SeasonalNaive": 13.612478679424395,
+   "SARIMA_sel": 12.197699015553955,
+   "SARIMAX": 11.167126802267571,
+   "Ridge_A": 10.07738818611437,
+   "Ridge_B": 10.218516037315178,
+   "XGB_A": 10.049946286471288,
+   "XGB_B": 10.395889923633423,
+   "XGB_B_placeboGT": 10.368599083723165,
+   "Ridge_B_placeboGT": 9.88192104686807,
+   "d_XGB_B_XGB_A": 0.3459436371621364,
+   "ci_XGB_B_XGB_A": 0.16102644320844858,
+   "wil_XGB_B_XGB_A": 0.0007076263427734375,
+   "better_XGB_B_XGB_A": 0,
+   "worse_XGB_B_XGB_A": 3,
+   "d_Ridge_B_Ridge_A": 0.14112785120080834,
+   "ci_Ridge_B_Ridge_A": 0.13489579961929307,
+   "wil_Ridge_B_Ridge_A": 0.01923370361328125,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": 0.027290839910259823,
+   "ci_XGB_B_XGB_B_placeboGT": 0.13646234205436442,
+   "wil_XGB_B_XGB_B_placeboGT": 1.0,
+   "better_XGB_B_XGB_B_placeboGT": 0,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": 0.3365949904471083,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.12794729921221099,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.000133514404296875,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 3
+  },
+  {
+   "beta": 0.2,
+   "n": 20,
+   "SeasonalNaive": 13.220400749893278,
+   "SARIMA_sel": 12.82999200053824,
+   "SARIMAX": 11.528122906719329,
+   "Ridge_A": 10.90630373268342,
+   "Ridge_B": 10.411317926596492,
+   "XGB_A": 10.751312528261815,
+   "XGB_B": 10.773761875474229,
+   "XGB_B_placeboGT": 11.073339089784922,
+   "Ridge_B_placeboGT": 10.454240436800905,
+   "d_XGB_B_XGB_A": 0.022449347212415295,
+   "ci_XGB_B_XGB_A": 0.2021397088543446,
+   "wil_XGB_B_XGB_A": 0.7011814117431641,
+   "better_XGB_B_XGB_A": 0,
+   "worse_XGB_B_XGB_A": 2,
+   "d_Ridge_B_Ridge_A": -0.4949858060869272,
+   "ci_Ridge_B_Ridge_A": 0.19775694577034508,
+   "wil_Ridge_B_Ridge_A": 0.0003223419189453125,
+   "better_Ridge_B_Ridge_A": 1,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.29957721431069284,
+   "ci_XGB_B_XGB_B_placeboGT": 0.13637194195487398,
+   "wil_XGB_B_XGB_B_placeboGT": 0.0007076263427734375,
+   "better_XGB_B_XGB_B_placeboGT": 0,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.04292251020441649,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.18755446730181086,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.5458755493164062,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "beta": 0.3,
+   "n": 20,
+   "SeasonalNaive": 13.304854121143212,
+   "SARIMA_sel": 13.925598135470754,
+   "SARIMAX": 12.28681051197374,
+   "Ridge_A": 12.609586995688293,
+   "Ridge_B": 11.285898236501037,
+   "XGB_A": 11.910991457083263,
+   "XGB_B": 11.20563218026541,
+   "XGB_B_placeboGT": 12.037801985859893,
+   "Ridge_B_placeboGT": 11.81228560335904,
+   "d_XGB_B_XGB_A": -0.7053592768178526,
+   "ci_XGB_B_XGB_A": 0.21442187232818574,
+   "wil_XGB_B_XGB_A": 1.9073486328125e-05,
+   "better_XGB_B_XGB_A": 3,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -1.3236887591872555,
+   "ci_Ridge_B_Ridge_A": 0.2017689779475007,
+   "wil_Ridge_B_Ridge_A": 1.9073486328125e-06,
+   "better_Ridge_B_Ridge_A": 5,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.8321698055944836,
+   "ci_XGB_B_XGB_B_placeboGT": 0.15067441941575285,
+   "wil_XGB_B_XGB_B_placeboGT": 1.9073486328125e-06,
+   "better_XGB_B_XGB_B_placeboGT": 4,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.5263873668580012,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.23219746507372746,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.0004825592041015625,
+   "better_Ridge_B_Ridge_B_placeboGT": 1,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "beta": 0.4,
+   "n": 20,
+   "SeasonalNaive": 14.817329107927028,
+   "SARIMA_sel": 16.091673154670623,
+   "SARIMAX": 14.092541691570176,
+   "Ridge_A": 15.510863431165003,
+   "Ridge_B": 13.378070595753679,
+   "XGB_A": 13.686540775680323,
+   "XGB_B": 12.62093930366537,
+   "XGB_B_placeboGT": 13.778852685109097,
+   "Ridge_B_placeboGT": 14.36850111193365,
+   "d_XGB_B_XGB_A": -1.0656014720149514,
+   "ci_XGB_B_XGB_A": 0.2720229200334672,
+   "wil_XGB_B_XGB_A": 3.814697265625e-06,
+   "better_XGB_B_XGB_A": 3,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -2.132792835411325,
+   "ci_Ridge_B_Ridge_A": 0.17934401886623513,
+   "wil_Ridge_B_Ridge_A": 1.9073486328125e-06,
+   "better_Ridge_B_Ridge_A": 5,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -1.1579133814437275,
+   "ci_XGB_B_XGB_B_placeboGT": 0.19853336559198048,
+   "wil_XGB_B_XGB_B_placeboGT": 1.9073486328125e-06,
+   "better_XGB_B_XGB_B_placeboGT": 2,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.9904305161799762,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.1921076435187574,
+   "wil_Ridge_B_Ridge_B_placeboGT": 1.9073486328125e-06,
+   "better_Ridge_B_Ridge_B_placeboGT": 1,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  }
+ ],
+ "sens": [
+  {
+   "scenario": "sigma=0.05",
+   "n": 10,
+   "SeasonalNaive": 9.910187066144058,
+   "Ridge_A": 7.281166108973442,
+   "Ridge_B": 6.614468415276237,
+   "XGB_A": 7.237733493014863,
+   "XGB_B": 6.505940536146336,
+   "XGB_B_placeboGT": 7.341895579550355,
+   "Ridge_B_placeboGT": 6.775940216583207,
+   "d_XGB_B_XGB_A": -0.7317929568685285,
+   "ci_XGB_B_XGB_A": 0.17347983309267268,
+   "wil_XGB_B_XGB_A": 0.001953125,
+   "better_XGB_B_XGB_A": 3,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.666697693697203,
+   "ci_Ridge_B_Ridge_A": 0.14656634944274935,
+   "wil_Ridge_B_Ridge_A": 0.001953125,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.835955043404019,
+   "ci_XGB_B_XGB_B_placeboGT": 0.20279054458052556,
+   "wil_XGB_B_XGB_B_placeboGT": 0.001953125,
+   "better_XGB_B_XGB_B_placeboGT": 4,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.16147180130696928,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.1473419575420417,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.037109375,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "sigma=0.20",
+   "n": 10,
+   "SeasonalNaive": 23.878343327825384,
+   "Ridge_A": 20.18982938495028,
+   "Ridge_B": 19.96854313566039,
+   "XGB_A": 21.831440320634574,
+   "XGB_B": 21.27308897964716,
+   "XGB_B_placeboGT": 21.29261821789807,
+   "Ridge_B_placeboGT": 20.033889604006013,
+   "d_XGB_B_XGB_A": -0.5583513409874126,
+   "ci_XGB_B_XGB_A": 0.32757013986659334,
+   "wil_XGB_B_XGB_A": 0.005859375,
+   "better_XGB_B_XGB_A": 0,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.22128624928988855,
+   "ci_Ridge_B_Ridge_A": 0.29069784329894577,
+   "wil_Ridge_B_Ridge_A": 0.275390625,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.01952923825091162,
+   "ci_XGB_B_XGB_B_placeboGT": 0.3037159733788907,
+   "wil_XGB_B_XGB_B_placeboGT": 1.0,
+   "better_XGB_B_XGB_B_placeboGT": 0,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.06534646834561819,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.3343461438247756,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.845703125,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "festive=1.20",
+   "n": 10,
+   "SeasonalNaive": 13.192414262765704,
+   "Ridge_A": 10.609643897412685,
+   "Ridge_B": 9.651056703459492,
+   "XGB_A": 11.285291063436777,
+   "XGB_B": 10.461137392215921,
+   "XGB_B_placeboGT": 10.992842485106028,
+   "Ridge_B_placeboGT": 10.244234119309848,
+   "d_XGB_B_XGB_A": -0.8241536712208571,
+   "ci_XGB_B_XGB_A": 0.1845488801943336,
+   "wil_XGB_B_XGB_A": 0.001953125,
+   "better_XGB_B_XGB_A": 6,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.9585871939531927,
+   "ci_Ridge_B_Ridge_A": 0.18535376752610574,
+   "wil_Ridge_B_Ridge_A": 0.001953125,
+   "better_Ridge_B_Ridge_A": 4,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.5317050928901068,
+   "ci_XGB_B_XGB_B_placeboGT": 0.20475028215970226,
+   "wil_XGB_B_XGB_B_placeboGT": 0.00390625,
+   "better_XGB_B_XGB_B_placeboGT": 2,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.5931774158503578,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.1868976063669396,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.001953125,
+   "better_Ridge_B_Ridge_B_placeboGT": 1,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "festive=1.60",
+   "n": 10,
+   "SeasonalNaive": 14.24245995995364,
+   "Ridge_A": 11.420620886923981,
+   "Ridge_B": 11.407121419726831,
+   "XGB_A": 11.940492126700438,
+   "XGB_B": 11.392665397617314,
+   "XGB_B_placeboGT": 11.979617578638896,
+   "Ridge_B_placeboGT": 10.949525327495492,
+   "d_XGB_B_XGB_A": -0.5478267290831228,
+   "ci_XGB_B_XGB_A": 0.2604714973265763,
+   "wil_XGB_B_XGB_A": 0.005859375,
+   "better_XGB_B_XGB_A": 1,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.013499467197152625,
+   "ci_Ridge_B_Ridge_A": 0.2099908360205274,
+   "wil_Ridge_B_Ridge_A": 1.0,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.5869521810215828,
+   "ci_XGB_B_XGB_B_placeboGT": 0.2814769864922062,
+   "wil_XGB_B_XGB_B_placeboGT": 0.00390625,
+   "better_XGB_B_XGB_B_placeboGT": 1,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": 0.45759609223133724,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.2431729814678747,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.013671875,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "lead=1",
+   "n": 10,
+   "SeasonalNaive": 13.819731026390233,
+   "Ridge_A": 11.490961379539183,
+   "Ridge_B": 11.015381717334378,
+   "XGB_A": 11.47246870959209,
+   "XGB_B": 11.073509862194616,
+   "XGB_B_placeboGT": 11.36921540925057,
+   "Ridge_B_placeboGT": 10.473994139063546,
+   "d_XGB_B_XGB_A": -0.3989588473974733,
+   "ci_XGB_B_XGB_A": 0.2970294502248668,
+   "wil_XGB_B_XGB_A": 0.037109375,
+   "better_XGB_B_XGB_A": 1,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.47557966220480485,
+   "ci_Ridge_B_Ridge_A": 0.2568530650570326,
+   "wil_Ridge_B_Ridge_A": 0.009765625,
+   "better_Ridge_B_Ridge_A": 1,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.2957055470559535,
+   "ci_XGB_B_XGB_B_placeboGT": 0.39209276064329596,
+   "wil_XGB_B_XGB_B_placeboGT": 0.232421875,
+   "better_XGB_B_XGB_B_placeboGT": 0,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": 0.5413875782708338,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.2948483045431421,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.009765625,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "lead=4",
+   "n": 10,
+   "SeasonalNaive": 13.129573788533843,
+   "Ridge_A": 11.116967845198378,
+   "Ridge_B": 10.625713621218349,
+   "XGB_A": 10.916031776672565,
+   "XGB_B": 10.574399334198025,
+   "XGB_B_placeboGT": 10.80856389526831,
+   "Ridge_B_placeboGT": 11.048415352799173,
+   "d_XGB_B_XGB_A": -0.34163244247453994,
+   "ci_XGB_B_XGB_A": 0.16942853310779346,
+   "wil_XGB_B_XGB_A": 0.00390625,
+   "better_XGB_B_XGB_A": 0,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.49125422398003166,
+   "ci_Ridge_B_Ridge_A": 0.12289503409567196,
+   "wil_Ridge_B_Ridge_A": 0.001953125,
+   "better_Ridge_B_Ridge_A": 5,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.23416456107028552,
+   "ci_XGB_B_XGB_B_placeboGT": 0.2637145952207667,
+   "wil_XGB_B_XGB_B_placeboGT": 0.083984375,
+   "better_XGB_B_XGB_B_placeboGT": 1,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.4227017315808256,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.08625953932031584,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.001953125,
+   "better_Ridge_B_Ridge_B_placeboGT": 3,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "growth=0",
+   "n": 10,
+   "SeasonalNaive": 13.832568632645557,
+   "Ridge_A": 10.922601844608636,
+   "Ridge_B": 10.445943175926576,
+   "XGB_A": 11.758381162201678,
+   "XGB_B": 10.990098258242146,
+   "XGB_B_placeboGT": 11.513647335655302,
+   "Ridge_B_placeboGT": 10.544472666955837,
+   "d_XGB_B_XGB_A": -0.7682829039595335,
+   "ci_XGB_B_XGB_A": 0.15253382312426184,
+   "wil_XGB_B_XGB_A": 0.001953125,
+   "better_XGB_B_XGB_A": 4,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.47665866868206114,
+   "ci_Ridge_B_Ridge_A": 0.20271888693248932,
+   "wil_Ridge_B_Ridge_A": 0.00390625,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.5235490774131557,
+   "ci_XGB_B_XGB_B_placeboGT": 0.25361568052097505,
+   "wil_XGB_B_XGB_B_placeboGT": 0.005859375,
+   "better_XGB_B_XGB_B_placeboGT": 1,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.09852949102926303,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.2224468807356248,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.625,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "growth=0.30",
+   "n": 10,
+   "SeasonalNaive": 16.64961619775122,
+   "Ridge_A": 10.871730576822616,
+   "Ridge_B": 10.413806375491465,
+   "XGB_A": 11.66787488677752,
+   "XGB_B": 11.022440789154686,
+   "XGB_B_placeboGT": 11.541512179721504,
+   "Ridge_B_placeboGT": 10.519936806619652,
+   "d_XGB_B_XGB_A": -0.6454340976228327,
+   "ci_XGB_B_XGB_A": 0.10580917100737058,
+   "wil_XGB_B_XGB_A": 0.001953125,
+   "better_XGB_B_XGB_A": 1,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.4579242013311514,
+   "ci_Ridge_B_Ridge_A": 0.20596759352684263,
+   "wil_Ridge_B_Ridge_A": 0.00390625,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.5190713905668181,
+   "ci_XGB_B_XGB_B_placeboGT": 0.1898694934369244,
+   "wil_XGB_B_XGB_B_placeboGT": 0.00390625,
+   "better_XGB_B_XGB_B_placeboGT": 0,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.10613043112818818,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.21833187958797368,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.625,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "amp=0",
+   "n": 10,
+   "SeasonalNaive": 13.71871023312617,
+   "Ridge_A": 10.878878570793022,
+   "Ridge_B": 10.358167457494805,
+   "XGB_A": 11.55676697010227,
+   "XGB_B": 10.929594776000119,
+   "XGB_B_placeboGT": 11.549602960297786,
+   "Ridge_B_placeboGT": 10.516487657561026,
+   "d_XGB_B_XGB_A": -0.6271721941021507,
+   "ci_XGB_B_XGB_A": 0.15907119579559692,
+   "wil_XGB_B_XGB_A": 0.001953125,
+   "better_XGB_B_XGB_A": 2,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.5207111132982163,
+   "ci_Ridge_B_Ridge_A": 0.19697424004433334,
+   "wil_Ridge_B_Ridge_A": 0.001953125,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.6200081842976658,
+   "ci_XGB_B_XGB_B_placeboGT": 0.23537187699498308,
+   "wil_XGB_B_XGB_B_placeboGT": 0.001953125,
+   "better_XGB_B_XGB_B_placeboGT": 2,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.15832020006621939,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.215981211675662,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.193359375,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "amp=0.20",
+   "n": 10,
+   "SeasonalNaive": 13.715313884285809,
+   "Ridge_A": 10.883888196107474,
+   "Ridge_B": 10.477897239484568,
+   "XGB_A": 11.574893927240627,
+   "XGB_B": 10.9446726213066,
+   "XGB_B_placeboGT": 11.484383161721443,
+   "Ridge_B_placeboGT": 10.515921496112004,
+   "d_XGB_B_XGB_A": -0.6302213059340283,
+   "ci_XGB_B_XGB_A": 0.2031383203096899,
+   "wil_XGB_B_XGB_A": 0.00390625,
+   "better_XGB_B_XGB_A": 0,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.40599095662290735,
+   "ci_Ridge_B_Ridge_A": 0.21397997222656612,
+   "wil_Ridge_B_Ridge_A": 0.005859375,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.5397105404148412,
+   "ci_XGB_B_XGB_B_placeboGT": 0.26454723332494984,
+   "wil_XGB_B_XGB_B_placeboGT": 0.00390625,
+   "better_XGB_B_XGB_B_placeboGT": 1,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.03802425662743545,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.22405680322941,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.625,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  },
+  {
+   "scenario": "signal=smart watches",
+   "n": 10,
+   "SeasonalNaive": 16.112283939361596,
+   "Ridge_A": 10.770521193321983,
+   "Ridge_B": 10.461548270072063,
+   "XGB_A": 11.398297966491736,
+   "XGB_B": 10.391995075775679,
+   "XGB_B_placeboGT": 10.824712920636346,
+   "Ridge_B_placeboGT": 10.61051466740324,
+   "d_XGB_B_XGB_A": -1.0063028907160585,
+   "ci_XGB_B_XGB_A": 0.31094874093939856,
+   "wil_XGB_B_XGB_A": 0.001953125,
+   "better_XGB_B_XGB_A": 5,
+   "worse_XGB_B_XGB_A": 0,
+   "d_Ridge_B_Ridge_A": -0.30897292324992076,
+   "ci_Ridge_B_Ridge_A": 0.2477963014380222,
+   "wil_Ridge_B_Ridge_A": 0.064453125,
+   "better_Ridge_B_Ridge_A": 0,
+   "worse_Ridge_B_Ridge_A": 0,
+   "d_XGB_B_XGB_B_placeboGT": -0.43271784486066667,
+   "ci_XGB_B_XGB_B_placeboGT": 0.17030326214798341,
+   "wil_XGB_B_XGB_B_placeboGT": 0.00390625,
+   "better_XGB_B_XGB_B_placeboGT": 1,
+   "worse_XGB_B_XGB_B_placeboGT": 0,
+   "d_Ridge_B_Ridge_B_placeboGT": -0.14896639733117584,
+   "ci_Ridge_B_Ridge_B_placeboGT": 0.16484550552022106,
+   "wil_Ridge_B_Ridge_B_placeboGT": 0.083984375,
+   "better_Ridge_B_Ridge_B_placeboGT": 0,
+   "worse_Ridge_B_Ridge_B_placeboGT": 0
+  }
+ ],
+ "launch": {
+  "summary": [
+   {
+    "shift": 0,
+    "xgb_overlap_true": 4.0,
+    "ridge_overlap_true": 4.2,
+    "xgb_overlap_fest": 2.0,
+    "true_overlap_fest": 1.4,
+    "xgb_start_week_median": 41.0,
+    "true_start_week_median": 41.0
+   },
+   {
+    "shift": 6,
+    "xgb_overlap_true": 4.0,
+    "ridge_overlap_true": 4.2,
+    "xgb_overlap_fest": 4.0,
+    "true_overlap_fest": 4.0,
+    "xgb_start_week_median": 45.0,
+    "true_start_week_median": 44.0
+   }
+  ],
+  "n": 10,
+  "main": {
+   "seed": 1,
+   "shift": 0,
+   "y_start": "2025-10-12",
+   "y_end": "2025-11-09",
+   "y_start_isoweek": 41,
+   "y_overlap_festive_weeks": 2,
+   "XGB_B_start": "2025-10-19",
+   "XGB_B_end": "2025-11-16",
+   "XGB_B_start_isoweek": 42,
+   "XGB_B_overlap_festive_weeks": 1,
+   "Ridge_B_start": "2025-10-12",
+   "Ridge_B_end": "2025-11-09",
+   "Ridge_B_start_isoweek": 41,
+   "Ridge_B_overlap_festive_weeks": 2,
+   "XGB_B_overlap_true_weeks": 4,
+   "Ridge_B_overlap_true_weeks": 5,
+   "festive_start": "2025-09-28",
+   "festive_end": "2025-10-19"
+  }
+ },
+ "price_tab": [
+  {
+   "week_type": "festive",
+   "week": "2025-09-28",
+   "forecast_units": 2230.9335681796074,
+   "base_price": 406.2916666666667,
+   "elasticity": -0.5,
+   "p_star_grid": 528.1791666666667,
+   "p_star_closed_form": 528.1791666666667,
+   "p_star_over_p0": 1.3,
+   "revenue_at_p_star": 1001582.7379903286,
+   "revenue_at_p0": 906409.7176383064,
+   "revenue_gain_pct": 10.50000000000002
+  },
+  {
+   "week_type": "festive",
+   "week": "2025-09-28",
+   "forecast_units": 2230.9335681796074,
+   "base_price": 406.2916666666667,
+   "elasticity": -0.8,
+   "p_star_grid": 459.4221153846154,
+   "p_star_closed_form": 457.078125,
+   "p_star_over_p0": 1.1307692307692307,
+   "revenue_at_p_star": 917715.703938789,
+   "revenue_at_p0": 906409.7176383064,
+   "revenue_gain_pct": 1.2473372781065306
+  },
+  {
+   "week_type": "festive",
+   "week": "2025-09-28",
+   "forecast_units": 2230.9335681796074,
+   "base_price": 406.2916666666667,
+   "elasticity": -1.0,
+   "p_star_grid": 403.1663461538461,
+   "p_star_closed_form": 406.2916666666667,
+   "p_star_over_p0": 0.9923076923076922,
+   "revenue_at_p_star": 906356.0839272036,
+   "revenue_at_p0": 906409.7176383064,
+   "revenue_gain_pct": -0.0059171597632912
+  },
+  {
+   "week_type": "festive",
+   "week": "2025-09-28",
+   "forecast_units": 2230.9335681796074,
+   "base_price": 406.2916666666667,
+   "elasticity": -1.5,
+   "p_star_grid": 340.65993589743584,
+   "p_star_closed_form": 338.5763888888889,
+   "p_star_over_p0": 0.8384615384615383,
+   "revenue_at_p_star": 944141.0333991672,
+   "revenue_at_p0": 906409.7176383064,
+   "revenue_gain_pct": 4.162721893491139
+  },
+  {
+   "week_type": "festive",
+   "week": "2025-09-28",
+   "forecast_units": 2230.9335681796074,
+   "base_price": 406.2916666666667,
+   "elasticity": -2.0,
+   "p_star_grid": 303.15608974358975,
+   "p_star_closed_form": 304.71875,
+   "p_star_over_p0": 0.7461538461538462,
+   "revenue_at_p_star": 1019684.115487543,
+   "revenue_at_p0": 906409.7176383064,
+   "revenue_gain_pct": 12.497041420118338
+  },
+  {
+   "week_type": "festive",
+   "week": "2025-09-28",
+   "forecast_units": 2230.9335681796074,
+   "base_price": 406.2916666666667,
+   "elasticity": -3.0,
+   "p_star_grid": 284.40416666666664,
+   "p_star_closed_form": 284.40416666666664,
+   "p_star_over_p0": 0.7,
+   "revenue_at_p_star": 1205524.9244589475,
+   "revenue_at_p0": 906409.7176383064,
+   "revenue_gain_pct": 33.00000000000001
+  },
+  {
+   "week_type": "non-festive",
+   "week": "2025-05-11",
+   "forecast_units": 1713.1046703457832,
+   "base_price": 406.2916666666667,
+   "elasticity": -0.5,
+   "p_star_grid": 528.1791666666667,
+   "p_star_closed_form": 528.1791666666667,
+   "p_star_over_p0": 1.3,
+   "revenue_at_p_star": 769102.2676166091,
+   "revenue_at_p0": 696020.1516892388,
+   "revenue_gain_pct": 10.50000000000002
+  },
+  {
+   "week_type": "non-festive",
+   "week": "2025-05-11",
+   "forecast_units": 1713.1046703457832,
+   "base_price": 406.2916666666667,
+   "elasticity": -0.8,
+   "p_star_grid": 459.4221153846154,
+   "p_star_closed_form": 457.078125,
+   "p_star_over_p0": 1.1307692307692307,
+   "revenue_at_p_star": 704701.8705043923,
+   "revenue_at_p0": 696020.1516892388,
+   "revenue_gain_pct": 1.2473372781065306
+  },
+  {
+   "week_type": "non-festive",
+   "week": "2025-05-11",
+   "forecast_units": 1713.1046703457832,
+   "base_price": 406.2916666666667,
+   "elasticity": -1.0,
+   "p_star_grid": 403.1663461538461,
+   "p_star_closed_form": 406.2916666666667,
+   "p_star_over_p0": 0.9923076923076922,
+   "revenue_at_p_star": 695978.9670648787,
+   "revenue_at_p0": 696020.1516892388,
+   "revenue_gain_pct": -0.0059171597632912
+  },
+  {
+   "week_type": "non-festive",
+   "week": "2025-05-11",
+   "forecast_units": 1713.1046703457832,
+   "base_price": 406.2916666666667,
+   "elasticity": -1.5,
+   "p_star_grid": 340.65993589743584,
+   "p_star_closed_form": 338.5763888888889,
+   "p_star_over_p0": 0.8384615384615383,
+   "revenue_at_p_star": 724993.5349267169,
+   "revenue_at_p0": 696020.1516892388,
+   "revenue_gain_pct": 4.162721893491117
+  },
+  {
+   "week_type": "non-festive",
+   "week": "2025-05-11",
+   "forecast_units": 1713.1046703457832,
+   "base_price": 406.2916666666667,
+   "elasticity": -2.0,
+   "p_star_grid": 303.15608974358975,
+   "p_star_closed_form": 304.71875,
+   "p_star_over_p0": 0.7461538461538462,
+   "revenue_at_p_star": 783002.0783382136,
+   "revenue_at_p0": 696020.1516892388,
+   "revenue_gain_pct": 12.49704142011836
+  },
+  {
+   "week_type": "non-festive",
+   "week": "2025-05-11",
+   "forecast_units": 1713.1046703457832,
+   "base_price": 406.2916666666667,
+   "elasticity": -3.0,
+   "p_star_grid": 284.40416666666664,
+   "p_star_closed_form": 284.40416666666664,
+   "p_star_over_p0": 0.7,
+   "revenue_at_p_star": 925706.8017466876,
+   "revenue_at_p0": 696020.1516892388,
+   "revenue_gain_pct": 33.00000000000001
+  }
+ ],
+ "peaks": [
+  {
+   "season": 2023,
+   "peak5_start": "2024-01-07",
+   "peak5_end": "2024-02-04",
+   "start_isoweek": 1,
+   "peak_week": "2024-01-28",
+   "peak_value": 100.0,
+   "diwali": "2023-11-12"
+  },
+  {
+   "season": 2024,
+   "peak5_start": "2024-12-29",
+   "peak5_end": "2025-01-26",
+   "start_isoweek": 52,
+   "peak_week": "2025-01-26",
+   "peak_value": 94.0,
+   "diwali": "2024-11-01"
+  },
+  {
+   "season": 2025,
+   "peak5_start": "2025-10-19",
+   "peak5_end": "2025-11-16",
+   "start_isoweek": 42,
+   "peak_week": "2025-11-02",
+   "peak_value": 94.0,
+   "diwali": "2025-10-20"
+  }
+ ]
+}

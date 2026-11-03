@@ -1,37 +1,31 @@
-# Optezum - ML Research Forecasting Project
+# DemandFlow – revision 1 reproduction package (RINENG-D-26-22476)
 
-Optezum combines research notebooks (SARIMA/XGBoost + Google Trends) with a Next.js web app for interactive forecasting demos.
+This folder reproduces every number, table and figure in the revised manuscript
+"Search-Aware E-Commerce Demand Forecasting with Google Trends: A Leakage-Free Evaluation under Controlled Simulation".
 
-## Repository structure
-- `notebooks/` - research pipeline (`01` to `06`) for data prep, SARIMA baseline, XGBoost with trends, and comparison.
-- `src/` - Python helper scripts (synthetic sales generation and Google Trends fetching).
-- `frontend-react/` - Next.js app used for UI interaction, CSV ingestion, and visual forecasting flow.
-- `data/` - raw/processed project datasets and model result artifacts.
+## Contents
+| File | Purpose |
+|---|---|
+| `data/amazon.csv` | Amazon India product catalogue (input; sets category scale and base price) |
+| `data/google_trends_earbuds_india.csv`, `data/google_trends_smart_watches.csv` | Real weekly Google Trends series, India (inputs) |
+| `sim.py` | Controlled demand simulator and sale calendar (Section 3.3, Eq. 1, Table 3) |
+| `pipeline.py` | Leakage-free features, models, rolling-origin evaluation, bootstrap CIs, Diebold–Mariano test |
+| `select_sarima.py` | SARIMA specification selection on the training window |
+| `run_main.py` | Main experiment (seed 42, beta = 0.2): Tables 6–8 |
+| `run_replications.py` | 100 replications over beta (Table 9, Fig. 11) and 110 sensitivity runs (Fig. 12) |
+| `decision_modules.py` | Launch-window evaluation, counterfactual calendar, price scenarios (Sections 4.7–4.8) |
+| `leakage_audit.py` | Re-runs the ORIGINAL pipeline and removes the leaking features (Table 5) |
+| `summarize.py` | Collects all quoted numbers into `outputs/numbers.json` and tables into `outputs/tables.xlsx` |
+| `make_figures.py` | Draws every revised figure into `figures/` |
+| `run_all.py` | Runs everything in order |
+| `outputs/` | All simulated data, model inputs, test-period forecasts, metrics and test results (CSV/XLSX/JSON) |
 
-## Local development
-### 1) Python environment
-```bash
+## Reproduce
+```
 pip install -r requirements.txt
+python run_all.py            # full run
+python run_all.py --quick    # main experiment + figures only
 ```
-
-### 2) Frontend app
-```bash
-cd frontend-react
-npm install
-npm run dev
-```
-
-Open `http://localhost:3000`.
-
-## Research vs app runtime
-- Notebooks are the primary place where full research model training is performed.
-- The frontend currently provides an interactive, CSV-driven demo pipeline and visual analytics experience.
-
-## Deployment (Railway)
-- Railway build uses root `Dockerfile`.
-- Runtime settings are managed via root `railway.json`.
-- Frontend assets and app source are under `frontend-react/`.
-
-## Privacy and secrets
-- Do not commit `.env`, credentials, API keys, or personal machine files.
-- Existing `.gitignore` already excludes common private/local artifacts such as `.venv/`, `.env`, and `node_modules/`.
+Random seeds: simulator seeds 42 (main) and 1–20 (replications); XGBoost random_state = 42.
+`leakage_audit.py` reads the original files `data/processed/merged_sales_trends.csv` and
+`data/processed/synthetic_weekly_sales.csv` from the root of the DemandFlow repository.

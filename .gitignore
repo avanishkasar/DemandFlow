@@ -12,3 +12,9 @@ frontend-react/node_modules/
 frontend-react/.next/
 frontend-react/out/
 KAN-KubeAgent/
+
+# Editorial Manager submission files (not code)
+*.docx
+*.docm
+DemandFlow_revision_package.zip
+Figures.zip

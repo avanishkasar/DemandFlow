@@ -1,0 +1,10 @@
+,value
+synthetic_rows,471.0
+weeks_per_category,157.0
+rows_after_lag_dropna,459.0
+weeks_after_lag_dropna,153.0
+train_rows,303.0
+test_rows,156.0
+corr_between_categories_min,0.9999884314897439
+corr_PriceElasticity_UnitsSold,-1.0
+corr_WeeklyPrice_UnitsSold_within_category_min,0.9999977336374459
