@@ -28,3 +28,5 @@ npm run dev
 ```
 
 Open http://localhost:5173 to view the forecast dashboard.
+
+<!-- 2026-11-21T12:54:02 -->
