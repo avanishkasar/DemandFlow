@@ -1,3 +1,4 @@
+# Updated: 2026-11-21T12:53:59
 """Seasonal decomposition for demand signals."""
 import numpy as np
 
