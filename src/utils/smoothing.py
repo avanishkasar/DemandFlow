@@ -1,3 +1,4 @@
+# Updated: 2026-11-22T12:46:29
 """Time series smoothing utilities."""
 import numpy as np
 
